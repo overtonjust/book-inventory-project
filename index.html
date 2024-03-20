@@ -25,59 +25,21 @@
                 </div>
                 <i class="book__icon fa-regular fa-trash-can"></i>
             </article>
-            <article class="book">
-                <img class="book__img" src="https://m.media-amazon.com/images/I/71034vbR6rL._AC_UF1000,1000_QL80_.jpg" alt="Burn Book cover">
-                <div class="book__content">
-                    <p class="book__title">Burn Book</p>
-                    <p class="book__author">Kara Swisher</p>
-                    <p>
-                        <span class="book__bubble">In Stock</span>
-                    </p>
-                    <p class="book__price">$19.99</p>
-                </div>
-                <i class="book__icon fa-regular fa-trash-can"></i>
-            </article>
-            <article class="book">
-                <img class="book__img" src="https://m.media-amazon.com/images/I/71034vbR6rL._AC_UF1000,1000_QL80_.jpg" alt="Burn Book cover">
-                <div class="book__content">
-                    <p class="book__title">Burn Book</p>
-                    <p class="book__author">Kara Swisher</p>
-                    <p>
-                        <span class="book__bubble">In Stock</span>
-                    </p>
-                    <p class="book__price">$19.99</p>
-                </div>
-                <i class="book__icon fa-regular fa-trash-can"></i>
-            </article>
-            <article class="book">
-                <img class="book__img" src="https://m.media-amazon.com/images/I/71034vbR6rL._AC_UF1000,1000_QL80_.jpg" alt="Burn Book cover">
-                <div class="book__content">
-                    <p class="book__title">Burn Book</p>
-                    <p class="book__author">Kara Swisher</p>
-                    <p>
-                        <span class="book__bubble">In Stock</span>
-                    </p>
-                    <p class="book__price">$19.99</p>
-                </div>
-                <i class="book__icon fa-regular fa-trash-can"></i>
-            </article>
         </section>
         <section class="form">
-            <form action="post">
-                <input class="form__title input-block" type="text" name="title" placeholder="Title">
-                <input class="form__author input-block" type="text" name="author" placeholder="Author">
-                <input class="form__image input-block" type="url" name="url" placeholder="Image URL">
-                <input class="form__price input-block" type="text" name="price" placeholder="Price">
-                <select class="form__stock input-block" name="stock" >
-                    <optgroup>
-                        <option value="stock">In Stock</option>
-                        <option value="stock">Out of Stock</option>
-                    </optgroup>
+            <form action="post" method="post" target="self">
+                <input class="form__title input-block field" type="text" name="title" placeholder="Title" required>
+                <input class="form__author input-block field" type="text" name="author" placeholder="Author" required>
+                <input class="form__image input-block field" type="url" name="url"   placeholder="Image URL" required>
+                <input class="form__price input-block field" type="text" name="price"  pattern="[0-9]{1,}\.[0-9]{2}" placeholder="Price" required>
+                <select class="form__stock input-block field" name="stock" >
+                        <option value="In" selected>In Stock</option>
+                        <option value="Out">Out of Stock</option>
                 </select>
-                <input class="form__submit" type="submit" name="submit" value="Add Book">
+                <input class="form__submit field" type="button" name="submit" value="Add Book">
             </form>
         </section>
     </main>   
-    
+    <script src="script.js"></script>
 </body>
 </html>

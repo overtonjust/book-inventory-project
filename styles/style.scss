@@ -1,18 +1,21 @@
+$deepblue : #0E044B;
+$beige : #F3EDE7;
+
 body {
     margin: 0;
     padding: 0;
     font-size: 16px;
     font-family: sans-serif;
-    background-color: #F3EDE7;
+    background-color: $beige;
+    height: 100vh;
+    width: 100lvw;
 }
 
 main {
-    height: 100vh;
-    width: 100vw;
     display: grid;
     grid-template-columns: 1fr 3fr 4fr;
-    gap: 10px;
     padding: 30px;
+    margin: 10px auto;
 }
 
 .heading {
@@ -29,12 +32,16 @@ main {
         margin: 0;
         font-weight: 500;
         text-align: center;
+        color: $deepblue;
+        padding: auto 0;
     }
 }
 
 .list {
     display: grid;
     grid-template-rows: repeat(5, auto) ;
+    max-height: 700px;
+    overflow-y: scroll;
 }
 
 .book {
@@ -43,27 +50,30 @@ main {
     padding: 5px;
     max-height: 150px;
     border-bottom: 1.5px solid black;
+    
 
     &__img {
-        width: 80px;
+        width: 90px;
         object-fit: cover;
         grid-column: 1;
-        
+        margin-bottom: 20px;
     }
 
     &__content p {
-        margin: 0;
-        margin-top: 10px;
-        margin-bottom: 10px;
+       line-height: 20px;
     }
 
     &__title {
         font-size: 1.2rem;
         grid-column: 2;
+        margin: 0 auto;
+        color: $deepblue;
     }
+
     &__author {
         font-size: .8rem;
         grid-column: 2;
+        margin: 5px auto;
     }
 
     &__bubble {
@@ -79,6 +89,8 @@ main {
         font-size: 1.4rem;
         grid-column: 2;
         font-weight: 600;
+        margin: 25px auto;
+        color: $deepblue;
     }
 
     &__icon {
@@ -87,6 +99,7 @@ main {
         justify-self: center;
         font-size: 1.5rem;
         margin-bottom: 30px;
+        cursor: pointer;
     }
     
 }
@@ -102,10 +115,11 @@ main {
         border-radius: 40px;
         width: 250px;
         height: 45px;
-        background-color: navy;
+        background-color: $deepblue;
         border: none;
         color: white;
         font-size: 1.1rem;
+        cursor: pointer;
     }
    
 
@@ -115,7 +129,10 @@ main {
         grid-template-rows: auto;
         gap: 15px;
         justify-items: center;
-        border-left: 1px solid navy;
+        border-left: 1px solid $deepblue;
+        padding-top: 100px;
+        padding-bottom: 50px;
+        padding-right: 50px;
         padding-left: 150px;
     }
 
@@ -125,7 +142,7 @@ main {
     font-size: 1.2rem;
     width: 300px;
     border: none;
-    border-bottom: 2px solid navy;
+    border-bottom: 2px solid $deepblue;
     outline: none;
     margin: 5px 0;
     padding: 8px 0;
