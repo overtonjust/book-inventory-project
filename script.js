@@ -6,6 +6,7 @@ const errorMsg = document.querySelector('.form__error');
 
 
 
+
 submit.addEventListener('click', () => {
     
     
@@ -89,11 +90,13 @@ submit.addEventListener('click', () => {
         icon.setAttribute('class', 'book__icon fa-regular fa-trash-can');
         icon.addEventListener('click', () => {
             book.remove();
+            saveBooks();
         });
 
     book.append(image, content, icon);
-
+    
     list.appendChild(book);
+    saveBooks();
 
     defaultInputs.forEach(input => {
         input.value = '';
@@ -101,5 +104,27 @@ submit.addEventListener('click', () => {
 });
 
 
+function saveBooks() {
+    let bookList = list.innerHTML
+    localStorage.setItem('bookshelf', bookList);
+}
 
+function loadBooks() {
+    let savedBooks = localStorage.getItem('bookshelf');
 
+    if(savedBooks) {
+        list.innerHTML = localStorage.getItem('bookshelf');
+
+        const iconsArr = document.querySelectorAll('i');
+        
+        iconsArr.forEach(icon => {
+            icon.addEventListener('click', () => {
+                icon.parentElement.remove();
+                saveBooks();
+            });
+
+        })
+    }
+}
+
+loadBooks()
